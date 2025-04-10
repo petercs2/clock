@@ -3,16 +3,16 @@ import 'package:get/get.dart';
 
 import 'clock_timer_logic.dart';
 
-class AudioToolView extends GetView<PageLogic> {
-  const AudioToolView({super.key});
+class ClockTimerView extends GetView<PageLogic> {
+  const ClockTimerView({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
         child: Obx(
-          () => controller.legros.value
-              ? const CircularProgressIndicator(color: Colors.black)
+          () => controller.carter.value
+              ? const CircularProgressIndicator(color: Colors.deepPurpleAccent)
               : buildError(),
         ),
       ),
@@ -26,7 +26,7 @@ class AudioToolView extends GetView<PageLogic> {
         children: [
           IconButton(
             onPressed: () {
-              controller.tsqg();
+              controller.sipmlk();
             },
             icon: const Icon(
               Icons.restart_alt,

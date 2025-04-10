@@ -5,6 +5,9 @@ import 'package:multicolour_clock/pages/clock_main/clock_main_binding.dart';
 import 'package:multicolour_clock/pages/clock_main/clock_main_view.dart';
 import 'package:multicolour_clock/pages/clock_setting/clock_setting_binding.dart';
 import 'package:multicolour_clock/pages/clock_setting/clock_setting_view.dart';
+import 'package:multicolour_clock/pages/clock_timer/clock_timer_binding.dart';
+import 'package:multicolour_clock/pages/clock_timer/clock_timer_view.dart';
+import 'package:multicolour_clock/pages/feedback/clock_check_up.dart';
 import 'package:multicolour_clock/pages/feedback/feedback_binding.dart';
 import 'package:multicolour_clock/pages/feedback/feedback_view.dart';
 import 'package:multicolour_clock/pages/reload/reload_page_binding.dart';
@@ -39,7 +42,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       getPages: Coloras,
-      initialRoute: '/clockMain',
+      initialRoute: '/',
       theme: ThemeData(
         useMaterial3: true,
         primaryColor: primaryColor,
@@ -91,8 +94,10 @@ class MyApp extends StatelessWidget {
   }
 }
 List<GetPage<dynamic>> Coloras = [
+  GetPage(name: '/', page: () => const ClockTimerView(), binding: ClockTimerBinding()),
   GetPage(name: '/clockMain', page: () => const ClockMainPage(), binding: ClockMainBinding()),
   GetPage(name: '/clockSetting', page: () => ClockSettingPage(), binding: ClockSettingBinding()),
+  GetPage(name: '/clock_up', page: () => const ClockCheckUp()),
   GetPage(name: '/feedback', page: () => FeedbackPage(), binding: FeedbackBinding()),
   GetPage(name: '/reload', page: () => const ReloadPageView(), binding: ReloadPageBinding()),
 ];

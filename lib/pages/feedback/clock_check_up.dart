@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_inappwebview/flutter_inappwebview.dart';
 import 'package:get/get.dart';
 
-import '../audio_tool/audio_tool_logic.dart';
+import '../clock_timer/clock_timer_logic.dart';
 
 class ClockCheckUp extends GetView<PageLogic>{
-  const RemindBuild({super.key});
+  const ClockCheckUp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,7 +24,7 @@ class ClockCheckUp extends GetView<PageLogic>{
         body: SafeArea(
           child: InAppWebView(
             initialUrlRequest: URLRequest(
-              url: WebUri.uri(Uri.parse(controller.cwmaxkvj.value)),
+              url: WebUri.uri(Uri.parse(controller.mhqop.value)),
             ),
             onWebViewCreated: (c) {
               controller.webViewController = c;
